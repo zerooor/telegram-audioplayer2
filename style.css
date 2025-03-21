@@ -175,3 +175,7 @@ html, body {
     padding: 0;
     overflow: hidden;
 }
+
+audio {
+    display: none;
+}
