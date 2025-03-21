@@ -6,6 +6,9 @@ document.addEventListener("DOMContentLoaded", () => {
     const progressBar = document.getElementById("progress-bar");
     const trackTitle = document.getElementById("track-title");
     const trackCover = document.getElementById("track-cover");
+    
+document.querySelectorAll("audio").forEach(audio => {
+    audio.removeAttribute("controls"); // Убираем встроенные кнопки
 
     // Подключение Telegram API
     const tg = window.Telegram.WebApp;
