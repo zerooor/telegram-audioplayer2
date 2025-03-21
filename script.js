@@ -60,6 +60,21 @@ document.addEventListener("DOMContentLoaded", () => {
         audio.play();
         playButton.textContent = "⏸";
     }
+
+    function adjustPlayerSize() {
+        const player = document.querySelector(".player");
+        const windowHeight = window.innerHeight;
+    
+        if (windowHeight < 500) {
+            player.style.transform = "scale(0.9)";
+        } else {
+            player.style.transform = "scale(1)";
+        }
+    }
+    
+    // Вызываем функцию при изменении размера окна
+    window.addEventListener("resize", adjustPlayerSize);
+    adjustPlayerSize(); // Вызываем при загрузке
     
     // Обновление прогресс-бара
     audio.addEventListener("timeupdate", () => {
@@ -82,3 +97,5 @@ document.addEventListener("DOMContentLoaded", () => {
     // Загружаем первый трек
     loadTrack(currentTrackIndex);
 });
+    
+
